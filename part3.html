@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Part 3</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+</head>
+<body>
+    <div class="container">
+    <nav>
+        <a href="part1.html">Part 1</a> |
+        <a href="part2.html">Part 2</a> |
+        <a href="part3.html">Part 3</a> |
+        <a href="part4.html">Part 4</a> |
+        <a href="part5.html">Part 5</a>
+    </nav>
+    <hr>
+
+    <button id="add-btn">Add Item</button>
+    <button id="prepend-btn">Prepend Item</button>
+    <button id="remove-btn">Remove Item</button>
+    <ul id="item-list">
+        <li>Item 1</li>
+    </ul>
+
+    <hr>
+
+    <img id="attr-img" src="https://via.placeholder.com/150/ff0000" alt="Red">
+    <button id="change-img">Change Image</button>
+    <br><br>
+    <a id="attr-link" href="https://google.com" target="_blank">Google Link</a>
+    <button id="change-link">Change Link</button>
+
+    <hr>
+
+    <form>
+        <input type="text" id="name" placeholder="Name"><br>
+        <input type="email" id="email" placeholder="Email">
+    </form>
+    <div>Name: <span id="out-name"></span></div>
+    <div>Email: <span id="out-email"></span></div>
+    </div>
+    <script>
+        $(document).ready(function() {
+            $("#add-btn").click(function() { $("#item-list").append("<li>Appended Item</li>"); });
+            $("#prepend-btn").click(function() { $("#item-list").prepend("<li>Prepended Item</li>"); });
+            $("#remove-btn").click(function() { $("#item-list li:last").remove(); });
+
+            $("#change-img").click(function() { $("#attr-img").attr("src", "https://via.placeholder.com/150/0000ff"); });
+            $("#change-link").click(function() { $("#attr-link").attr("href", "https://wikipedia.org").text("Wikipedia Link"); });
+
+            $("#name, #email").on("input", function() {
+                $("#out-name").text($("#name").val());
+                $("#out-email").text($("#email").val());
+            });
+        });
+    </script>
+</body>
+</html>

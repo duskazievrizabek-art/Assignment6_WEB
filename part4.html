@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Part 4</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    
+</head>
+<body>
+    <div class="container">
+    <nav>
+        <a href="part1.html">Part 1</a> |
+        <a href="part2.html">Part 2</a> |
+        <a href="part3.html">Part 3</a> |
+        <a href="part4.html">Part 4</a> |
+        <a href="part5.html">Part 5</a>
+    </nav>
+    <hr>
+
+    <button id="anim-basic">Basic Anim</button>
+    <div id="box1" class="box"></div>
+
+    <button id="anim-seq">Sequential Anim</button>
+    <div id="box2" class="box"></div>
+
+    <button id="anim-comb">Combined Anim</button>
+    <div id="box3" class="box"></div>
+    </div>
+    <script>
+        $(document).ready(function() {
+            $("#anim-basic").click(function() {
+                $("#box1").animate({
+                    width: "200px",
+                    height: "200px",
+                    left: "100px"
+                });
+            });
+
+            $("#anim-seq").click(function() {
+                $("#box2")
+                    .animate({ left: "200px" })
+                    .animate({ top: "200px" })
+                    .animate({ width: "50px", height: "50px" })
+                    .animate({ left: "0px", top: "0px", width: "100px", height: "100px" });
+            });
+
+            $("#anim-comb").click(function() {
+                $("#box3").animate({
+                    opacity: 0.3,
+                    width: "180px",
+                    height: "180px",
+                    left: "150px"
+                }, 1000);
+            });
+        });
+    </script>
+</body>
+</html>

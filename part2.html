@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Part 2</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    
+</head>
+<body>
+    <div class="container">
+    <nav>
+        <a href="part1.html">Part 1</a> |
+        <a href="part2.html">Part 2</a> |
+        <a href="part3.html">Part 3</a> |
+        <a href="part4.html">Part 4</a> |
+        <a href="part5.html">Part 5</a>
+    </nav>
+    <hr>
+
+    <p id="target-p">Paragraph Text</p>
+    <button id="hide-btn">Hide</button>
+    <button id="show-btn">Show</button>
+    <button id="toggle-btn">Toggle</button>
+
+    <hr>
+
+    <img id="img-fade" src="https://via.placeholder.com/150" alt="Image">
+    <button id="fade-in">Fade In</button>
+    <button id="fade-out">Fade Out</button>
+    <button id="fade-toggle">Fade Toggle</button>
+
+    <hr>
+
+    <button id="slide-up">Slide Up</button>
+    <button id="slide-down">Slide Down</button>
+    <button id="slide-toggle">Slide Toggle</button>
+    <div id="panel">Collapsible Panel</div>
+    </div>
+    <script>
+        $(document).ready(function() {
+            $("#hide-btn").click(function() { $("#target-p").hide(); });
+            $("#show-btn").click(function() { $("#target-p").show(); });
+            $("#toggle-btn").click(function() { $("#target-p").toggle(); });
+
+            $("#fade-in").click(function() { $("#img-fade").fadeIn(); });
+            $("#fade-out").click(function() { $("#img-fade").fadeOut(); });
+            $("#fade-toggle").click(function() { $("#img-fade").fadeToggle(); });
+
+            $("#slide-up").click(function() { $("#panel").slideUp(); });
+            $("#slide-down").click(function() { $("#panel").slideDown(); });
+            $("#slide-toggle").click(function() { $("#panel").slideToggle(); });
+        });
+    </script>
+</body>
+</html>

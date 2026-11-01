@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Part 1</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+</head>
+<body>
+    <div class="container">
+    <nav>
+        <a href="part1.html">Part 1</a> |
+        <a href="part2.html">Part 2</a> |
+        <a href="part3.html">Part 3</a> |
+        <a href="part4.html">Part 4</a> |
+        <a href="part5.html">Part 5</a>
+    </nav>
+    <hr>
+
+    <h1 id="title">Old Title</h1>
+    <p class="text">Old Paragraph</p>
+    <div>Tag Element</div>
+    </div>
+    <script>
+        $(document).ready(function() {
+            console.log("jQuery is ready!");
+
+            $("#title").text("New Title via ID");
+            $(".text").html("<strong>New Paragraph via Class</strong>");
+            $("div").css("color", "red");
+        });
+    </script>
+    
+</body>
+</html>
